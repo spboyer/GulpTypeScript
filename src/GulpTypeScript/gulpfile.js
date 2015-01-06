@@ -47,5 +47,10 @@
     });
 
     // Run
-    gulp.task('run', shell.task(['k web']));
+    gulp.task('run', function (cb) {
+        console.log('running...')
+        
+        require('child_process').exec('k web', null, cb);
+        console.log('done...');
+    });
 }
